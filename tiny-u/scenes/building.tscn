@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcy0v8q1ki32o"]
+
+[ext_resource type="Script" uid="uid://crsj3v5ftbq84" path="res://scripts/building.gd" id="1_n8bkc"]
+[ext_resource type="FontFile" uid="uid://b30wbhl2hvj8j" path="res://resources/PixelFont.ttf" id="2_uvy8r"]
+
+[node name="Building" type="Node2D"]
+script = ExtResource("1_n8bkc")
+
+[node name="Shape" type="ColorRect" parent="."]
+offset_right = 100.0
+offset_bottom = 80.0
+color = Color(0.34117648, 0.3882353, 0.6784314, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 100.0
+offset_bottom = 80.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_uvy8r")
+text = "Text"
+horizontal_alignment = 1
+vertical_alignment = 1
