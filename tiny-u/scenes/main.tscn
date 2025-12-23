@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://lq7ky3hahua3"]
+[gd_scene load_steps=5 format=3 uid="uid://lq7ky3hahua3"]
 
 [ext_resource type="Script" uid="uid://dwcaqayu0b633" path="res://scripts/pathfinding.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bcy0v8q1ki32o" path="res://scenes/building.tscn" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://cprrxi2j4do6u" path="res://scripts/agent_manager.gd" id="4_jyhfs"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sugp2"]
+vertices = PackedVector2Array(1956.9609, 1110.9688, -21.09375, 1107.0078, -31.898438, -22, 1953.0313, -22)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-42, -32, -31, 1117, 1967, 1121, 1963, -32)])
+
 [node name="Main" type="Node2D"]
 
-[node name="PathNetwork" type="Node" parent="."]
+[node name="PathNetwork" type="Node2D" parent="."]
 script = ExtResource("1_jyhfs")
 
 [node name="Buildings" type="Node2D" parent="."]
@@ -28,3 +33,6 @@ building_type = "food"
 
 [node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
 script = ExtResource("4_jyhfs")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_sugp2")
